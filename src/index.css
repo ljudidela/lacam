@@ -1,40 +1,15 @@
-@import 'leaflet/dist/leaflet.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --radius: 0.5rem;
-  }
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+body {
+  margin: 0;
+  background-color: #0f172a;
+  color: #e2e8f0;
 }
 
 /* Custom Scrollbar */
@@ -42,27 +17,25 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-secondary;
+  background: #1e293b;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-muted-foreground/30 rounded-full;
+  background: #475569;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-muted-foreground/50;
+  background: #64748b;
 }
 
-/* Leaflet Customization */
-.leaflet-container {
-  background: #0f172a !important;
-  font-family: inherit;
-}
+/* Leaflet Popup Customization */
 .leaflet-popup-content-wrapper {
-  @apply bg-card text-card-foreground rounded-lg border border-border shadow-xl;
+  background: #1e293b;
+  color: #fff;
+  border-radius: 0.5rem;
 }
 .leaflet-popup-tip {
-  @apply bg-card;
+  background: #1e293b;
 }
-.custom-marker-icon {
-  background: transparent;
-  border: none;
+.leaflet-container a.leaflet-popup-close-button {
+  color: #94a3b8;
 }
