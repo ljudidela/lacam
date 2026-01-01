@@ -1,4 +1,4 @@
-export interface Camera {
+export interface Webcam {
   id: string;
   title: string;
   location: string;
@@ -6,5 +6,5 @@ export interface Camera {
   lng: number;
   thumbnail: string;
   youtubeId: string;
-  status: 'live' | 'offline';
+  tags: string[];
 }
