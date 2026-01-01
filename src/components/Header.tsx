@@ -1,29 +1,36 @@
 import React from 'react';
-import { Video, Map as MapIcon, Menu } from 'lucide-react';
+import { Video, Map, List } from 'lucide-react';
 
 interface HeaderProps {
-  toggleSidebar: () => void;
+  viewMode: 'list' | 'map';
+  setViewMode: (mode: 'list' | 'map') => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
+export const Header: React.FC<HeaderProps> = ({ viewMode, setViewMode }) => {
   return (
-    <header className="h-16 border-b border-border bg-background/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 flex items-center px-4 justify-between">
-      <div className="flex items-center gap-3">
-        <div className="p-2 bg-primary rounded-lg">
-          <Video className="w-6 h-6 text-primary-foreground" />
+    <header className="bg-slate-900 border-b border-slate-800 p-4 flex items-center justify-between sticky top-0 z-20 shadow-lg">
+      <div className="flex items-center gap-2">
+        <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-lg">
+          <Video className="w-6 h-6 text-white" />
         </div>
         <div>
-          <h1 className="font-bold text-lg leading-none">LA Live Cams</h1>
-          <p className="text-xs text-muted-foreground">Real-time city surveillance</p>
+          <h1 className="text-xl font-bold text-white tracking-tight">LA Live Cams</h1>
+          <p className="text-xs text-slate-400">Real-time views of Los Angeles</p>
         </div>
       </div>
-      
-      <div className="flex items-center gap-2">
-        <button 
-          onClick={toggleSidebar}
-          className="p-2 hover:bg-secondary rounded-md md:hidden"
+
+      <div className="flex md:hidden bg-slate-800 rounded-lg p-1">
+        <button
+          onClick={() => setViewMode('list')}
+          className={`p-2 rounded-md transition-all ${viewMode === 'list' ? 'bg-slate-700 text-white shadow-sm' : 'text-slate-400'}`}
         >
-          <Menu className="w-5 h-5" />
+          <List className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => setViewMode('map')}
+          className={`p-2 rounded-md transition-all ${viewMode === 'map' ? 'bg-slate-700 text-white shadow-sm' : 'text-slate-400'}`}
+        >
+          <Map className="w-5 h-5" />
         </button>
       </div>
     </header>
