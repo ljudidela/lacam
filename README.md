@@ -1,13 +1,21 @@
 # LA Live Cams
 
-A modern, responsive web application displaying live webcams from Los Angeles using React, TypeScript, Vite, Tailwind CSS, and Leaflet.
+A modern, responsive web application displaying live webcams from Los Angeles.
 
 ## Features
+- Interactive Map with camera locations
+- Grid list view with live thumbnails
+- Modern Dark UI
+- Responsive design (Mobile/Desktop)
+- YouTube Live Stream integration
 
-- **Interactive Map**: View camera locations on a dark-themed map.
-- **Live Previews**: Select cameras to view live YouTube streams.
-- **Responsive Design**: Works seamlessly on desktop and mobile.
-- **Modern UI**: Glassmorphism, smooth animations, and dark mode.
+## Tech Stack
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Leaflet (Maps)
+- Lucide React (Icons)
 
 ## Getting Started
 
@@ -16,18 +24,9 @@ A modern, responsive web application displaying live webcams from Los Angeles us
    npm install
    ```
 
-2. Run the development server:
+2. Run development server:
    ```bash
    npm run dev
    ```
 
-3. Open your browser at `http://localhost:5173`
-
-## Tech Stack
-
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- React Leaflet (Map)
-- Lucide React (Icons)
+3. Open http://localhost:5173
